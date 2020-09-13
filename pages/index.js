@@ -7,8 +7,8 @@ function TextQuestion({ text, answer, image, onCorrect = () => null }) {
   const [error, setError] = useState(false);
 
   function handleClick() {
-    const parsedResponse = response.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const parsedAnswer = answer.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const parsedResponse = response.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const parsedAnswer = answer.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     if (parsedResponse.toLowerCase() !== parsedAnswer.toLowerCase()) {
       setError(true);
       return;
@@ -25,7 +25,7 @@ function TextQuestion({ text, answer, image, onCorrect = () => null }) {
         {text}
       </h2>
 
-      {image && <img src={image} className="max-w-md"/>}
+      {image && <img src={image} className="max-w-md h-64"/>}
 
       <div className="flex flex-col items-center justify-center w-full my-4">
         <input
@@ -70,7 +70,7 @@ function MultipleChoiceQuestion({ text, options, answer, image, onCorrect = () =
         {text}
       </h2>
 
-      {image && <img src={image} className="max-w-md"/>}
+      {image && <img src={image} className="max-w-md h-64"/>}
 
       {error && <h2 className="p-3 text-lg font-bold bg-red-400 md:text-4xl text-center my-4">
         Casi! Probá de nuevo
