@@ -34,6 +34,7 @@ function TextQuestion({ text, answer, image, onCorrect = () => null }) {
           type="text"
           placeholder="Click acá para escribir la respuesta"
           autoComplete="off"
+          autoFocus
           onChange={e => setResponse(e.currentTarget.value)}
           value={response}
           onKeyDown={e => e.key === "Enter" ? handleClick() : null}
