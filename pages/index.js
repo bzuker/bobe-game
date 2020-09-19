@@ -29,7 +29,7 @@ function TextQuestion({ text, answer, image, onCorrect = () => null }) {
 
       <div className="flex flex-col items-center justify-center w-full my-4">
         <input
-          className="shadow border border-gray-700 rounded w-full py-12 px-3 leading-tight focus:outline-none focus:shadow-outline text-center text-4xl"
+          className="uppercase font-black shadow border border-gray-700 rounded w-full py-12 px-3 leading-tight focus:outline-none focus:shadow-outline text-center text-4xl"
           id="answer"
           type="text"
           placeholder="Click acá para escribir la respuesta"
